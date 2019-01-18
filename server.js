@@ -24,9 +24,9 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use((req, res, next) => {
-  res.render('maintainence.hbs');
-});
+// app.use((req, res, next) => {
+//   res.render('maintainence.hbs');
+// });
 
 app.get('/', (req, res) => {
   res.render('home.hbs', {
@@ -35,6 +35,11 @@ app.get('/', (req, res) => {
   });
 });
 
+app.get('/projects', (req,res) => {
+  res.render('projects.hbs', {
+    pageTitle: 'Portfolio Page'
+  })
+})
 app.get('/about', (req, res) => {
   res.render('about.hbs', {
     pageTitle: 'About Page'
